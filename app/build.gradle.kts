@@ -59,6 +59,7 @@ dependencies {
     val daggerHiltVersion = "2.50"
     val hiltNavigationComposeVersion = "1.1.0"
     val splashScreenVersion = "1.0.1"
+    val extendedIconsVersion = "1.6.2"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -89,4 +90,8 @@ dependencies {
 
     // Google Splash Screen
     implementation("androidx.core:core-splashscreen:$splashScreenVersion")
+
+    // Extended Icons
+    implementation("androidx.compose.material:material-icons-extended-android:$extendedIconsVersion")
+
 }
