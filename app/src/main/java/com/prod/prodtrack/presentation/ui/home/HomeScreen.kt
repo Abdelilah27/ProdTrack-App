@@ -16,6 +16,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,7 +39,7 @@ fun HomeScreen() {
             AppTopBar(title = stringResource(id = R.string.app_name))
         }
     ) { paddingValues ->
-        var selectedTabIndex by remember {
+        var selectedTabIndex by rememberSaveable {
             mutableIntStateOf(0)
         }
         val pagerState = rememberPagerState {

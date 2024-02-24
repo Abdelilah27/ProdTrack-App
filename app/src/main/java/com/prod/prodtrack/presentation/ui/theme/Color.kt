@@ -1,4 +1,4 @@
-package com.prod.prodtrack.ui.theme
+package com.prod.prodtrack.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
