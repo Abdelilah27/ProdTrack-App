@@ -4,10 +4,10 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
@@ -19,6 +19,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.prod.common.view.components.AppTopBar
+import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.pet.PetScreen
 import com.prod.prodtrack.presentation.ui.production.ProductionScreen
 import com.prod.prodtrack.presentation.ui.stock.StockScreen
@@ -28,10 +31,13 @@ import com.prod.prodtrack.presentation.utils.getItems
 @Composable
 fun HomeScreen() {
     val tabItems = getItems()
-    Surface(
+
+    Scaffold(
         modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
-    ) {
+        topBar = {
+            AppTopBar(title = stringResource(id = R.string.app_name))
+        }
+    ) { paddingValues ->
         var selectedTabIndex by remember {
             mutableIntStateOf(0)
         }
@@ -48,6 +54,7 @@ fun HomeScreen() {
         }
         Column(
             modifier = Modifier
+                .padding(paddingValues)
                 .fillMaxSize()
         ) {
             TabRow(selectedTabIndex = selectedTabIndex) {

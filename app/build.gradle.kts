@@ -53,6 +53,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
+    implementation(project(":common"))
+    implementation(project(":domain"))
 
     // Define versions
     val coroutinesVersion = "1.7.3"

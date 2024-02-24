@@ -16,5 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "ProdTrack"
 include(":app")
 include(":data")
+include(":common")
 include(":domain")
-include(":commun")
