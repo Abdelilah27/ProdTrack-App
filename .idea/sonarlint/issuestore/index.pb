@@ -30,8 +30,6 @@ g
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
 gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
-y
-Iapp/src/main/java/com/prod/prodtrack/presentation/ui/main/MainActivity.kt,6/7/67aadf374fd6425cebaa95213498b8788f5be8d5
 ƒ
 Sapp/src/main/java/com/prod/prodtrack/presentation/ui/production/ProductionScreen.kt,3/9/3952beee308c0448df7a81f0a71cd098b646ab16
 y

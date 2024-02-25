@@ -13,7 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun PetScreen() {
+fun PetScreen(
+    onAddPetButtonClicked: () -> Unit
+) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -28,7 +30,9 @@ fun PetScreen() {
             }
         }
         FloatingActionButton(
-            onClick = { },
+            onClick = {
+                onAddPetButtonClicked()
+            },
             modifier = Modifier
                 .padding(16.dp)
                 .align(Alignment.BottomEnd)

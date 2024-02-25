@@ -6,7 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.prod.prodtrack.presentation.navigation.HOME_ROUTE
+import com.prod.prodtrack.presentation.navigation.addPetScreen
 import com.prod.prodtrack.presentation.navigation.homeScreen
+import com.prod.prodtrack.presentation.navigation.navigateToAddPetScreen
 
 @Composable
 fun MainApp() {
@@ -16,6 +18,11 @@ fun MainApp() {
         navController = navController,
         startDestination = HOME_ROUTE
     ) {
-        homeScreen()
+        homeScreen {
+            navController.navigateToAddPetScreen()
+        }
+        addPetScreen(onNavigateUp = {
+            navController.navigateUp()
+        })
     }
 }

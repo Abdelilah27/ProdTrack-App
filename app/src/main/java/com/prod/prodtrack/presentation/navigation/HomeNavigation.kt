@@ -5,8 +5,10 @@ import androidx.navigation.compose.composable
 import com.prod.prodtrack.presentation.ui.home.HomeScreen
 
 const val HOME_ROUTE = "Home"
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(
+    onAddPetButtonClicked: () -> Unit
+) {
     composable(HOME_ROUTE) {
-        HomeScreen()
+        HomeScreen(onAddPetButtonClicked = onAddPetButtonClicked)
     }
 }

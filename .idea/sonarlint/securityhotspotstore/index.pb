@@ -30,8 +30,6 @@ f
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-y
-Iapp/src/main/java/com/prod/prodtrack/presentation/ui/main/MainActivity.kt,6/7/67aadf374fd6425cebaa95213498b8788f5be8d5
 r
 Bapp/src/main/java/com/prod/prodtrack/presentation/utils/TabItem.kt,f/e/fe1581ce6ce9303ddb23b0562410ba7ab0dbfd56
 ƒ

@@ -30,7 +30,9 @@ import com.prod.prodtrack.presentation.utils.getItems
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onAddPetButtonClicked: () -> Unit
+) {
     val tabItems = getItems()
 
     Scaffold(
@@ -80,7 +82,7 @@ fun HomeScreen() {
                 when (index) {
                     0 -> ProductionScreen()
                     1 -> StockScreen()
-                    2 -> PetScreen()
+                    2 -> PetScreen(onAddPetButtonClicked)
                 }
             }
         }
