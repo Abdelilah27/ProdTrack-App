@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProdTrack</string>
+
+    <!-- Add Pet Screen -->
+    <string name="add_pet">Add Pet</string>
+    <string name="pet_name_label">Pet Name</string>
+    <string name="save_button">Save</string>
+
 </resources>
