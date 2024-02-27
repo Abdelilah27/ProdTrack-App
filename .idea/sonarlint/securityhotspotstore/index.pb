@@ -1,10 +1,6 @@
 
 >
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-e
-5app/src/main/java/com/prod/prodtrack/ui/theme/Type.kt,5/6/56774ad23ce9d9497e4a9f923fe5ddd571701399
-f
-6app/src/main/java/com/prod/prodtrack/ui/theme/Theme.kt,3/0/304b26a6c37e0b12fba1d0ee06d5e6e28975b4e2
 g
 7app/src/test/java/com/prod/prodtrack/ExampleUnitTest.kt,3/0/3004bc624f746b0112ab2496d9c94183abf8f149
 \
@@ -20,16 +16,10 @@ S
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-v
-Fapp/src/main/java/com/prod/prodtrack/presentation/core/di/ProdTrack.kt,0/a/0a4ebc8806a49b32c98b68c7cb0550146cc77d36
-f
-6app/src/main/java/com/prod/prodtrack/ui/theme/Color.kt,8/7/871147ef99e9677d7e62204a561e1c7deed40431
 ;
 gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 r
 Bapp/src/main/java/com/prod/prodtrack/presentation/utils/TabItem.kt,f/e/fe1581ce6ce9303ddb23b0562410ba7ab0dbfd56
 ƒ

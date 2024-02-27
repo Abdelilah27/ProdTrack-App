@@ -14,16 +14,6 @@ F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 v
 Fapp/src/androidTest/java/com/prod/prodtrack/ExampleInstrumentedTest.kt,a/e/ae8d6cef313ce23049ff21e30ce5c29cb55264a3
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-v
-Fapp/src/main/java/com/prod/prodtrack/presentation/core/di/ProdTrack.kt,0/a/0a4ebc8806a49b32c98b68c7cb0550146cc77d36
-f
-6app/src/main/java/com/prod/prodtrack/ui/theme/Color.kt,8/7/871147ef99e9677d7e62204a561e1c7deed40431
-f
-6app/src/main/java/com/prod/prodtrack/ui/theme/Theme.kt,3/0/304b26a6c37e0b12fba1d0ee06d5e6e28975b4e2
-e
-5app/src/main/java/com/prod/prodtrack/ui/theme/Type.kt,5/6/56774ad23ce9d9497e4a9f923fe5ddd571701399
 g
 7app/src/test/java/com/prod/prodtrack/ExampleUnitTest.kt,3/0/3004bc624f746b0112ab2496d9c94183abf8f149
 7
