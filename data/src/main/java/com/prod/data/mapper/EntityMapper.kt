@@ -5,7 +5,6 @@ import com.prod.domain.model.Pet
 
 object PetMapper : Mapper<Pet, PetEntity> {
     override fun map(data: Pet): PetEntity = PetEntity(
-        id = data.id,
         name = data.name,
     )
 }

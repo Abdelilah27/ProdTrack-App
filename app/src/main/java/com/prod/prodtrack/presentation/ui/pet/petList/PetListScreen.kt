@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun PetScreen(
-    onAddPetButtonClicked: () -> Unit
+    onAddPetButtonClicked: () -> Unit,
 ) {
     Box(
         modifier = Modifier.fillMaxSize()

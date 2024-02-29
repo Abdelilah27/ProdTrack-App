@@ -5,5 +5,7 @@
     <string name="add_pet">Add Pet</string>
     <string name="pet_name_label">Pet Name</string>
     <string name="save_button">Save</string>
+    <string name="pet_added_successfully">Pet added successfully</string>
+    <string name="failed_to_add_pet">Failed to add pet</string>
 
 </resources>

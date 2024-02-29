@@ -13,7 +13,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-
 @HiltViewModel
 class AddPetViewModel @Inject constructor(
     private val addPetUseCase: AddPetUseCase,
@@ -23,23 +22,23 @@ class AddPetViewModel @Inject constructor(
         MutableStateFlow(AddPetUiState.Idle)
     val addPetState: StateFlow<AddPetUiState> = _addPetState.asStateFlow()
 
-    private fun addPet(pet: Pet) {
+    fun addPet(pet: Pet) {
         viewModelScope.launch {
-            addPetUseCase.invoke(pet).collect { detailsRequestState ->
-                _addPetState.value = when (detailsRequestState) {
+            addPetUseCase.invoke(pet).collect { addPetRequestState ->
+                _addPetState.value = when (addPetRequestState) {
                     is AddPetRequestState.Exception -> AddPetUiState.Exception(
-                        code = detailsRequestState.code,
-                        exception = detailsRequestState.exception
+                        code = addPetRequestState.code,
+                        exception = addPetRequestState.exception
                     )
 
                     is AddPetRequestState.Success -> AddPetUiState.Success(
-                        data = detailsRequestState.data
+                        data = addPetRequestState.data
                     )
 
-                    AddPetRequestState.Loading -> AddPetUiState.Loading
+                    is AddPetRequestState.Loading -> AddPetUiState.Loading
+
                 }
             }
         }
     }
-
 }
