@@ -3,8 +3,8 @@ package com.prod.prodtrack.presentation.ui.pet.addPet
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.prod.domain.model.Pet
-import com.prod.domain.usecase.pet.AddPetRequestState
-import com.prod.domain.usecase.pet.AddPetUseCase
+import com.prod.domain.usecase.pet.addPet.AddPetRequestState
+import com.prod.domain.usecase.pet.addPet.AddPetUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

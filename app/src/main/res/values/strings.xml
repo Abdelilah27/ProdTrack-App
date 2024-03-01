@@ -8,4 +8,9 @@
     <string name="pet_added_successfully">Pet added successfully</string>
     <string name="failed_to_add_pet">Failed to add pet</string>
 
+    <!-- Pet List Screen -->
+    <string name="failed_to_load_pets">Failed to load pets</string>
+    <string name="add">+</string>
+
+
 </resources>

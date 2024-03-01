@@ -95,6 +95,7 @@ fun AddPetScreen(
                         LocalContext.current,
                         stringResource(id = R.string.pet_added_successfully)
                     )
+                    onNavigateUp()
                 }
 
                 else -> {}

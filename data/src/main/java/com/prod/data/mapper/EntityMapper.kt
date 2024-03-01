@@ -8,3 +8,10 @@ object PetMapper : Mapper<Pet, PetEntity> {
         name = data.name,
     )
 }
+
+object EntityPetMapper : Mapper<PetEntity, Pet> {
+    override fun map(data: PetEntity): Pet = Pet(
+        id = data.id,
+        name = data.name,
+    )
+}

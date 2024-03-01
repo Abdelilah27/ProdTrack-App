@@ -81,7 +81,7 @@ fun HomeScreen(
                 when (index) {
                     0 -> ProductionScreen()
                     1 -> StockScreen()
-                    2 -> PetScreen(onAddPetButtonClicked)
+                    2 -> PetScreen(onAddPetButtonClicked = onAddPetButtonClicked)
                 }
             }
         }
