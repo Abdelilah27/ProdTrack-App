@@ -30,7 +30,6 @@ fun PetListItem(
         Text(
             text = pet.name,
             textAlign = TextAlign.Center,
-            fontSize = 16.sp,
             modifier = Modifier.weight(1f)
         )
     }

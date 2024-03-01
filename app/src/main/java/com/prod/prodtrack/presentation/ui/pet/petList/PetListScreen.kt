@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,6 +19,7 @@ import com.prod.common.view.components.ProgressBar
 import com.prod.common.view.components.showToast
 import com.prod.domain.usecase.pet.petList.PetListRequestState
 import com.prod.prodtrack.R
+import com.prod.prodtrack.presentation.ui.utils.intent.PetListIntent
 
 @Composable
 fun PetScreen(
@@ -26,6 +27,10 @@ fun PetScreen(
     onAddPetButtonClicked: () -> Unit,
 ) {
     val petListState by petListViewModel.petListState.collectAsStateWithLifecycle()
+
+    LaunchedEffect(key1 = petListViewModel) {
+        petListViewModel.processIntent(PetListIntent.PetList)
+    }
 
     Box(
         modifier = Modifier.fillMaxSize()
