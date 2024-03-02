@@ -1,12 +1,14 @@
 package com.prod.prodtrack.presentation.ui.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
@@ -20,19 +22,25 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.prod.common.view.components.AppTopBar
 import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.pet.petList.PetScreen
 import com.prod.prodtrack.presentation.ui.production.ProductionScreen
 import com.prod.prodtrack.presentation.ui.stock.StockScreen
-import com.prod.prodtrack.presentation.utils.getItems
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
-    onAddPetButtonClicked: () -> Unit
+    onAddPetButtonClicked: () -> Unit,
+    onAddStockButtonClicked: () -> Unit,
+    onAddProductionButtonClicked: () -> Unit
 ) {
-    val tabItems = getItems()
+    val tabItems = listOf(
+        TabItem("Production", { ProductionScreen() }, onAddProductionButtonClicked),
+        TabItem("Stock", { StockScreen() }, onAddStockButtonClicked),
+        TabItem("Pet", { PetScreen() }, onAddPetButtonClicked)
+    )
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -66,7 +74,7 @@ fun HomeScreen(
                             selectedTabIndex = index
                         },
                         text = {
-                            Text(text = item)
+                            Text(text = item.title)
                         }
                     )
                 }
@@ -78,13 +86,24 @@ fun HomeScreen(
                     .weight(1f),
                 verticalAlignment = Alignment.Top,
             ) { index ->
-                when (index) {
-                    0 -> ProductionScreen()
-                    1 -> StockScreen()
-                    2 -> PetScreen(onAddPetButtonClicked = onAddPetButtonClicked)
-                }
+                tabItems[index].screen()
             }
         }
 
+        Box(
+            modifier = Modifier
+                .fillMaxSize(),
+            contentAlignment = Alignment.BottomEnd
+        ) {
+            FloatingActionButton(
+                onClick = {
+                    tabItems[selectedTabIndex].onAddButtonClicked()
+                },
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(text = stringResource(id = R.string.add))
+            }
+        }
     }
 }
+

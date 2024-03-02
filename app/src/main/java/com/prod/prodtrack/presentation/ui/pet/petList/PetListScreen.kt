@@ -2,9 +2,6 @@ package com.prod.prodtrack.presentation.ui.pet.petList
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -12,7 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.prod.common.view.components.ProgressBar
@@ -24,7 +20,6 @@ import com.prod.prodtrack.presentation.ui.utils.intent.PetListIntent
 @Composable
 fun PetScreen(
     petListViewModel: PetListViewModel = hiltViewModel(),
-    onAddPetButtonClicked: () -> Unit,
 ) {
     val petListState by petListViewModel.petListState.collectAsStateWithLifecycle()
 
@@ -37,7 +32,7 @@ fun PetScreen(
     ) {
         when (val state = petListState) {
             is PetListRequestState.Loading -> {
-                ProgressBar(modifier = Modifier.fillMaxSize())
+                ProgressBar(modifier = Modifier.align(Alignment.Center))
             }
 
             is PetListRequestState.Success -> {
@@ -52,14 +47,6 @@ fun PetScreen(
                     stringResource(id = R.string.failed_to_load_pets)
                 )
             }
-        }
-        FloatingActionButton(
-            onClick = { onAddPetButtonClicked() },
-            modifier = Modifier
-                .padding(16.dp)
-                .align(Alignment.BottomEnd)
-        ) {
-            Text(text = stringResource(id = R.string.add))
         }
     }
 }

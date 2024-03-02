@@ -18,22 +18,14 @@ S
 gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
-r
-Bapp/src/main/java/com/prod/prodtrack/presentation/utils/TabItem.kt,f/e/fe1581ce6ce9303ddb23b0562410ba7ab0dbfd56
-ƒ
-Sapp/src/main/java/com/prod/prodtrack/presentation/ui/production/ProductionScreen.kt,3/9/3952beee308c0448df7a81f0a71cd098b646ab16
 y
 Iapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/StockScreen.kt,7/6/7689cddb453f1d2a7481848d5fcbbd279b09fd2b
-t
-Dapp/src/main/java/com/prod/prodtrack/presentation/ui/main/MainApp.kt,1/3/13cf8526fe1302c17f7a34b479e65dab379c9c51
 E
 data/build.gradle.kts,9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7
 G
 domain/build.gradle.kts,d/7/d72c8b69b8da0b3b02b699ccd509295dbd783baa
 q
 Aapp/src/main/java/com/prod/prodtrack/presentation/di/ProdTrack.kt,f/f/ff33633deee596991c0be61e74dd61be16bb0f0a
-€
-Papp/src/main/java/com/prod/prodtrack/presentation/navigation/AddPetNavigation.kt,0/6/0655966dd53aca93f7d3d9914cf03c06b0b156d7
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 F
@@ -54,8 +46,6 @@ f
 6data/src/main/java/com/prod/data/entities/PetEntity.kt,5/c/5ccaba1f02a816919434b63bc17f10c26bd2d646
 G
 common/build.gradle.kts,3/2/325c85c59c155f2016d748c1ea6d29a8db46025a
-s
-Ccommon/src/main/java/com/prod/common/view/components/ProgressBar.kt,0/0/0094e1fda9aca523af4808eb4d3fd69bc56ad512
 m
 =data/src/main/java/com/prod/data/dataSource/core/Constants.kt,e/8/e8e7cf19c248f5f97fef048313824bf022572997
 m

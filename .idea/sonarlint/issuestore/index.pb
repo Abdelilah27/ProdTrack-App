@@ -18,20 +18,12 @@ g
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
 gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
-ƒ
-Sapp/src/main/java/com/prod/prodtrack/presentation/ui/production/ProductionScreen.kt,3/9/3952beee308c0448df7a81f0a71cd098b646ab16
 y
 Iapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/StockScreen.kt,7/6/7689cddb453f1d2a7481848d5fcbbd279b09fd2b
-r
-Bapp/src/main/java/com/prod/prodtrack/presentation/utils/TabItem.kt,f/e/fe1581ce6ce9303ddb23b0562410ba7ab0dbfd56
-t
-Dapp/src/main/java/com/prod/prodtrack/presentation/ui/main/MainApp.kt,1/3/13cf8526fe1302c17f7a34b479e65dab379c9c51
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 q
 Aapp/src/main/java/com/prod/prodtrack/presentation/di/ProdTrack.kt,f/f/ff33633deee596991c0be61e74dd61be16bb0f0a
-€
-Papp/src/main/java/com/prod/prodtrack/presentation/navigation/AddPetNavigation.kt,0/6/0655966dd53aca93f7d3d9914cf03c06b0b156d7
 E
 data/build.gradle.kts,9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7
 G
@@ -50,8 +42,6 @@ D
 app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 G
 common/build.gradle.kts,3/2/325c85c59c155f2016d748c1ea6d29a8db46025a
-s
-Ccommon/src/main/java/com/prod/common/view/components/ProgressBar.kt,0/0/0094e1fda9aca523af4808eb4d3fd69bc56ad512
 q
 Acommon/src/main/java/com/prod/common/view/components/showToast.kt,c/2/c2644e228875050fba5b8f03e604d2f95094bf8e
 f

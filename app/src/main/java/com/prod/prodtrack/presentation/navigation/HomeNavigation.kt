@@ -6,9 +6,15 @@ import com.prod.prodtrack.presentation.ui.home.HomeScreen
 
 const val HOME_ROUTE = "Home"
 fun NavGraphBuilder.homeScreen(
-    onAddPetButtonClicked: () -> Unit
+    onAddPetButtonClicked: () -> Unit,
+    onAddStockButtonClicked: () -> Unit,
+    onAddProductionButtonClicked: () -> Unit
 ) {
     composable(HOME_ROUTE) {
-        HomeScreen(onAddPetButtonClicked = onAddPetButtonClicked)
+        HomeScreen(
+            onAddProductionButtonClicked = onAddProductionButtonClicked,
+            onAddStockButtonClicked = onAddStockButtonClicked,
+            onAddPetButtonClicked = onAddPetButtonClicked
+        )
     }
 }
