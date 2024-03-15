@@ -1,7 +1,6 @@
-package com.prod.prodtrack.presentation.ui.pet.petList
+package com.prod.prodtrack.presentation.ui.stock.stockList
 
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -11,11 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.prod.domain.model.Pet
+import com.prod.domain.model.Stock
 
 @Composable
-fun PetListItem(
-    pet: Pet
+fun StockListItem(
+    stock: Stock
 ) {
     Row(
         modifier = Modifier
@@ -24,19 +23,25 @@ fun PetListItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "#${pet.id}",
+            text = "#${stock.id}",
             textAlign = TextAlign.Start,
             modifier = Modifier.weight(1f),
             fontSize = 14.sp
         )
-        Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = pet.name,
+            text = stock.name,
             textAlign = TextAlign.Center,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            text = stock.quantity.toString(),
+            textAlign = TextAlign.End,
             modifier = Modifier.weight(1f)
         )
     }
 }
+
+
 
 
 

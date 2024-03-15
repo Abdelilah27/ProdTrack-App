@@ -1,16 +1,37 @@
 <resources>
     <string name="app_name">ProdTrack</string>
 
+    <!-- TabItem Title -->
+    <string name="production">Production</string>
+    <string name="stock">Stock</string>
+    <string name="pet">Pet</string>
+
     <!-- Add Pet Screen -->
     <string name="add_pet">Add Pet</string>
     <string name="pet_name_label">Pet Name</string>
-    <string name="save_button">Save</string>
     <string name="pet_added_successfully">Pet added successfully</string>
     <string name="failed_to_add_pet">Failed to add pet</string>
 
     <!-- Pet List Screen -->
     <string name="failed_to_load_pets">Failed to load pets</string>
     <string name="add">+</string>
+
+
+    <!-- Add Stock Screen -->
+    <string name="add_stock">Add Stock</string>
+    <string name="stock_name_label">Stock Name</string>
+    <string name="stock_quantity_label">Stock Quantity</string>
+    <string name="stock_added_successfully">Stock added successfully</string>
+    <string name="failed_to_add_stock">Failed to add stock</string>
+
+
+    <!-- Stock List Screen -->
+    <string name="failed_to_load_stocks">Failed to load stocks</string>
+
+
+    <!-- Button -->
+    <string name="save_button">Save</string>
+
 
 
 </resources>

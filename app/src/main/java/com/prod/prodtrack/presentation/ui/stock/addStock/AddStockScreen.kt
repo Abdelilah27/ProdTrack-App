@@ -1,4 +1,4 @@
-package com.prod.prodtrack.presentation.ui.pet.addPet
+package com.prod.prodtrack.presentation.ui.stock.addStock
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
@@ -21,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -28,22 +30,26 @@ import com.prod.common.view.components.AppTopBar
 import com.prod.common.view.components.ProgressBar
 import com.prod.common.view.components.showToast
 import com.prod.domain.model.Pet
+import com.prod.domain.model.Stock
 import com.prod.prodtrack.R
+import com.prod.prodtrack.presentation.ui.pet.addPet.AddPetUiState
 
 @Composable
-fun AddPetScreen(
+fun AddStockScreen(
     onNavigateUp: () -> Unit,
-    addPetViewModel: AddPetViewModel = hiltViewModel(),
+    addStockViewModel: AddStockViewModel = hiltViewModel(),
 ) {
-    val state by addPetViewModel.addPetState.collectAsStateWithLifecycle()
 
-    var petName by remember { mutableStateOf("") }
+    val state by addStockViewModel.addStockState.collectAsStateWithLifecycle()
+
+    var stockName by remember { mutableStateOf("") }
+    var stockQuantity by remember { mutableStateOf("") }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             AppTopBar(
-                title = stringResource(id = R.string.add_pet),
+                title = stringResource(id = R.string.add_stock),
                 hasBackBtn = true,
                 onBackBtnClicked = onNavigateUp
             )
@@ -59,17 +65,31 @@ fun AddPetScreen(
                     .verticalScroll(rememberScrollState())
             ) {
                 OutlinedTextField(
-                    value = petName,
-                    onValueChange = { petName = it },
-                    label = { Text(stringResource(id = R.string.pet_name_label)) },
+                    value = stockName,
+                    onValueChange = { stockName = it },
+                    label = { Text(stringResource(id = R.string.stock_name_label)) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp)
                 )
+                OutlinedTextField(
+                    value = stockQuantity,
+                    onValueChange = { stockQuantity = it },
+                    label = { Text(stringResource(id = R.string.stock_quantity_label)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                )
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     onClick = {
-                        addPetViewModel.addPet(Pet(name = petName))
+                        addStockViewModel.addStock(
+                            Stock(
+                                name = stockName,
+                                quantity = stockQuantity.toFloat()
+                            )
+                        )
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -81,21 +101,21 @@ fun AddPetScreen(
             }
             // TODO
             when (state) {
-                is AddPetUiState.Exception -> {
+                is AddStockUiState.Exception -> {
                     showToast(
                         LocalContext.current,
-                        stringResource(id = R.string.failed_to_add_pet)
+                        stringResource(id = R.string.failed_to_add_stock)
                     )
                 }
 
-                is AddPetUiState.Loading -> {
+                is AddStockUiState.Loading -> {
                     ProgressBar(modifier = Modifier.align(Alignment.Center))
                 }
 
-                is AddPetUiState.Success -> {
+                is AddStockUiState.Success -> {
                     showToast(
                         LocalContext.current,
-                        stringResource(id = R.string.pet_added_successfully)
+                        stringResource(id = R.string.stock_added_successfully)
                     )
                     onNavigateUp()
                 }
@@ -105,6 +125,3 @@ fun AddPetScreen(
         }
     }
 }
-
-
-

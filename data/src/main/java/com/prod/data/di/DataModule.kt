@@ -28,12 +28,8 @@ class DataModule {
         prodTrackDb: ProdTrackDb
     ) = prodTrackDb.petDao
 
-    /*
     @Provides
-    fun provideBookRepository(
-        bookDao: BookDao
-    ): BookRepository = BookRepositoryImpl(
-        bookDao = bookDao
-    )
-     */
+    fun provideStockDao(
+        prodTrackDb: ProdTrackDb
+    ) = prodTrackDb.stockDao
 }

@@ -27,7 +27,7 @@ import com.prod.common.view.components.AppTopBar
 import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.pet.petList.PetScreen
 import com.prod.prodtrack.presentation.ui.production.ProductionScreen
-import com.prod.prodtrack.presentation.ui.stock.StockScreen
+import com.prod.prodtrack.presentation.ui.stock.stockList.StockScreen
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -37,9 +37,9 @@ fun HomeScreen(
     onAddProductionButtonClicked: () -> Unit
 ) {
     val tabItems = listOf(
-        TabItem("Production", { ProductionScreen() }, onAddProductionButtonClicked),
-        TabItem("Stock", { StockScreen() }, onAddStockButtonClicked),
-        TabItem("Pet", { PetScreen() }, onAddPetButtonClicked)
+        TabItem(stringResource(id = R.string.production), { ProductionScreen() }, onAddProductionButtonClicked),
+        TabItem(stringResource(id = R.string.stock), { StockScreen() }, onAddStockButtonClicked),
+        TabItem(stringResource(id = R.string.pet), { PetScreen() }, onAddPetButtonClicked)
     )
 
     Scaffold(
