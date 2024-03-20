@@ -29,6 +29,7 @@ import com.prod.common.view.components.ProgressBar
 import com.prod.common.view.components.showToast
 import com.prod.domain.model.Pet
 import com.prod.prodtrack.R
+import com.prod.prodtrack.presentation.ui.production.addProduction.AddProductionUiState
 
 @Composable
 fun AddPetScreen(
@@ -49,9 +50,11 @@ fun AddPetScreen(
             )
         }
     ) { paddingValues ->
-        Box(modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp)) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(start = 16.dp, end = 16.dp)
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -74,10 +77,12 @@ fun AddPetScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .align(Alignment.CenterHorizontally),
+                    enabled = petName.isNotBlank() && state !is AddPetUiState.Loading
                 ) {
                     Text(stringResource(id = R.string.save_button))
                 }
+
             }
             // TODO
             when (state) {

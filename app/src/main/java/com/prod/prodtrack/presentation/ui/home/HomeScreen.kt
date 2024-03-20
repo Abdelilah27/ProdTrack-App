@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.prod.common.view.components.AppTopBar
 import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.pet.petList.PetScreen
-import com.prod.prodtrack.presentation.ui.production.ProductionScreen
+import com.prod.prodtrack.presentation.ui.production.productionList.ProductionScreen
 import com.prod.prodtrack.presentation.ui.stock.stockList.StockScreen
 
 @OptIn(ExperimentalFoundationApi::class)

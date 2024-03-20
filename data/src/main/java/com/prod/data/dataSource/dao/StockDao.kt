@@ -15,4 +15,7 @@ interface StockDao {
 
     @Query("SELECT * FROM stock_table ORDER BY id ASC")
     fun getAllStocks(): Flow<List<StockEntity>>
+
+    @Query("UPDATE stock_table SET quantity = :newQuantity WHERE id = :stockId")
+    suspend fun updateStockQuantity(stockId: Int, newQuantity: Float)
 }

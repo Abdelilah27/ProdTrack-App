@@ -55,9 +55,11 @@ fun AddStockScreen(
             )
         }
     ) { paddingValues ->
-        Box(modifier = Modifier
-            .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp)) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(start = 16.dp, end = 16.dp)
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -94,7 +96,10 @@ fun AddStockScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .align(Alignment.CenterHorizontally),
+                    enabled = stockName.isNotBlank() && stockQuantity.isNotBlank() // TODO
+                            && stockQuantity.toFloatOrNull() != null
+                            && state !is AddStockUiState.Loading
                 ) {
                     Text(stringResource(id = R.string.save_button))
                 }

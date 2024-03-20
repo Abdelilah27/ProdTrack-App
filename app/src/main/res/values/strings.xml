@@ -14,7 +14,6 @@
 
     <!-- Pet List Screen -->
     <string name="failed_to_load_pets">Failed to load pets</string>
-    <string name="add">+</string>
 
 
     <!-- Add Stock Screen -->
@@ -24,13 +23,28 @@
     <string name="stock_added_successfully">Stock added successfully</string>
     <string name="failed_to_add_stock">Failed to add stock</string>
 
-
     <!-- Stock List Screen -->
     <string name="failed_to_load_stocks">Failed to load stocks</string>
+
+    <!-- Add Production Screen -->
+    <string name="add_production">Add Production</string>
+    <string name="pet_select_label">Pet</string>
+    <string name="stock_select_label">Stock</string>
+    <string name="production_added_successfully">Production added successfully</string>
+    <string name="failed_to_add_production">Failed to add production</string>
+    <string name="failed_to_load_pets_stocks">Failed to load pets and stocks</string>
+    <string name="select_pet">Select Pet</string>
+    <string name="select_stock">Select Stock</string>
+    <string name="producing_label">Producing</string>
+    <string name="quantity_label">Quantity | MAX </string>
+
+
+
 
 
     <!-- Button -->
     <string name="save_button">Save</string>
+    <string name="add">+</string>
 
 
 

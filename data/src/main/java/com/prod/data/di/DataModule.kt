@@ -32,4 +32,9 @@ class DataModule {
     fun provideStockDao(
         prodTrackDb: ProdTrackDb
     ) = prodTrackDb.stockDao
+
+    @Provides
+    fun provideProductionDao(
+        prodTrackDb: ProdTrackDb
+    ) = prodTrackDb.productionDao
 }

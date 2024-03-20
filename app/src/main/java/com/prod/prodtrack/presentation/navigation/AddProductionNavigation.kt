@@ -3,8 +3,7 @@ package com.prod.prodtrack.presentation.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.prod.prodtrack.presentation.ui.pet.addPet.AddPetScreen
-import com.prod.prodtrack.presentation.ui.production.AddProductionScreen
+import com.prod.prodtrack.presentation.ui.production.addProduction.AddProductionScreen
 
 const val ADD_PRODUCTION_ROUTE = "addProduction"
 fun NavGraphBuilder.addProductionScreen(

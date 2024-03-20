@@ -19,4 +19,8 @@ class StockRepositoryImp @Inject constructor(private val stockDao: StockDao) : S
             EntityStockMapper.map(stockEntity)
         }
     }
+
+    override suspend fun updateStockQuantity(stockId: Int, newQuantity: Float) {
+        stockDao.updateStockQuantity(stockId = stockId, newQuantity = newQuantity)
+    }
 }

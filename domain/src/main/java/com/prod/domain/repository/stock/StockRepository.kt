@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 interface StockRepository {
     suspend fun addStock(stock: Stock)
     fun getAllStocks(): Flow<List<Stock>>
+    suspend fun updateStockQuantity(stockId: Int, newQuantity: Float)
 }

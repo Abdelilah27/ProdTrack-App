@@ -1,7 +1,6 @@
 package com.prod.prodtrack.presentation.ui.pet.petList
 
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -25,14 +24,13 @@ fun PetListItem(
     ) {
         Text(
             text = "#${pet.id}",
-            textAlign = TextAlign.Start,
-            modifier = Modifier.weight(1f),
+            textAlign = TextAlign.Center,
             fontSize = 14.sp
         )
-        Spacer(modifier = Modifier.weight(1f))
         Text(
             text = pet.name,
             textAlign = TextAlign.Center,
+            fontSize = 16.sp,
             modifier = Modifier.weight(1f)
         )
     }

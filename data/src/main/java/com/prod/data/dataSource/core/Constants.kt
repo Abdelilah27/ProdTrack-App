@@ -6,5 +6,6 @@ class Constants {
         const val PRODTRACK_DATABASE = "prodtrack_database"
         const val PET_TABLE = "pet_table"
         const val STOCK_TABLE = "stock_table"
+        const val PRODUCTION_TABLE = "production_table"
     }
 }
