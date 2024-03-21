@@ -136,12 +136,14 @@ fun AddProductionScreen(
                     enabled = !(selectedPetId.isEmpty() || selectedStockId.isEmpty() ||
                             quantity.isBlank() ||
                             (!(quantity.toFloatOrNull() != null) || (producing.isNotBlank() && producing.toFloatOrNull() == null)) ||
-                            (quantity.toFloatOrNull() ?: 0f) > (quantityMax.toFloatOrNull()
-                        ?: 0f) ||
+                            (quantity.toFloatOrNull() ?: 0f) > (quantityMax.toFloatOrNull() ?: 0f) ||
+                            (quantity.toFloatOrNull() ?: 0f) < 0f ||
+                            (producing.isNotBlank() && (producing.toFloatOrNull() ?: 0f) < 0f) ||
                             state is AddProductionUiState.Loading)
                 ) {
                     Text(stringResource(id = R.string.save_button))
                 }
+
 
 
             }

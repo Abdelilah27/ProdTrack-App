@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.core.text.isDigitsOnly
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.prod.common.view.components.AppTopBar
@@ -98,7 +99,7 @@ fun AddStockScreen(
                         .padding(bottom = 16.dp)
                         .align(Alignment.CenterHorizontally),
                     enabled = stockName.isNotBlank() && stockQuantity.isNotBlank() // TODO
-                            && stockQuantity.toFloatOrNull() != null
+                            && stockQuantity.toFloatOrNull() != null && stockQuantity.isDigitsOnly()
                             && state !is AddStockUiState.Loading
                 ) {
                     Text(stringResource(id = R.string.save_button))
