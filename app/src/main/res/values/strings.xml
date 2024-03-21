@@ -38,6 +38,9 @@
     <string name="producing_label">Producing</string>
     <string name="quantity_label">Quantity | MAX </string>
 
+    <!-- Production List Screen -->
+    <string name="failed_to_load_productions">Failed to load productions</string>
+
 
 
 

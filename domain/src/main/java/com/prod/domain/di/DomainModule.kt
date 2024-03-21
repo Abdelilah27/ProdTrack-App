@@ -6,6 +6,8 @@ import com.prod.domain.usecase.pet.petList.PetListUseCase
 import com.prod.domain.usecase.pet.petList.PetListUseCaseImp
 import com.prod.domain.usecase.production.addProduction.AddProductionUseCase
 import com.prod.domain.usecase.production.addProduction.AddProductionUseCaseImp
+import com.prod.domain.usecase.production.productionList.ProductionListUseCase
+import com.prod.domain.usecase.production.productionList.ProductionListUseCaseImp
 import com.prod.domain.usecase.stock.addStock.AddStockUseCase
 import com.prod.domain.usecase.stock.addStock.AddStockUseCaseImp
 import com.prod.domain.usecase.stock.stockList.StockListUseCase
@@ -38,5 +40,9 @@ abstract class DomainModule {
 
     @Binds
     abstract fun bindsUpdateQuantityStockUseCase(updateQuantityStockUseCaseImp: UpdateQuantityStockUseCaseImp): UpdateQuantityStockUseCase
+
+    @Binds
+    abstract fun bindsProductionListUseCase(productionListUseCaseImp: ProductionListUseCaseImp): ProductionListUseCase
+
 }
 
