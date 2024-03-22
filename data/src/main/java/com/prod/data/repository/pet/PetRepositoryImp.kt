@@ -19,4 +19,8 @@ class PetRepositoryImp @Inject constructor(private val petDao: PetDao) : PetRepo
             EntityPetMapper.map(petEntity)
         }
     }
+
+    override suspend fun deletePetById(id: Int) {
+        petDao.deletePetById(id)
+    }
 }

@@ -23,4 +23,8 @@ class StockRepositoryImp @Inject constructor(private val stockDao: StockDao) : S
     override suspend fun updateStockQuantity(stockId: Int, newQuantity: Float) {
         stockDao.updateStockQuantity(stockId = stockId, newQuantity = newQuantity)
     }
+
+    override suspend fun deleteStockById(id: Int) {
+        stockDao.deleteStockById(id)
+    }
 }

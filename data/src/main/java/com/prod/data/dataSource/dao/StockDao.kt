@@ -18,4 +18,7 @@ interface StockDao {
 
     @Query("UPDATE stock_table SET quantity = :newQuantity WHERE id = :stockId")
     suspend fun updateStockQuantity(stockId: Int, newQuantity: Float)
+
+    @Query("DELETE FROM stock_table WHERE id = :id")
+    suspend fun deleteStockById(id: Int)
 }

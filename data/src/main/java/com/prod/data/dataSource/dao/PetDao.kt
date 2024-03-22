@@ -15,4 +15,7 @@ interface PetDao {
 
     @Query("SELECT * FROM pet_table ORDER BY id ASC")
     fun getAllPets(): Flow<List<PetEntity>>
+
+    @Query("DELETE FROM pet_table WHERE id = :id")
+    suspend fun deletePetById(id: Int)
 }

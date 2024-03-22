@@ -13,8 +13,10 @@ interface ProductionDao {
     @Insert(onConflict = IGNORE)
     suspend fun addProduction(productionEntity: ProductionEntity)
 
-
     @Query("SELECT * FROM production_table ORDER BY id ASC")
     fun getAllProductions(): Flow<List<ProductionEntity>>
+
+    @Query("DELETE FROM production_table WHERE id = :id")
+    suspend fun deleteProductionById(id: Int)
 
 }

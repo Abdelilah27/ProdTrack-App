@@ -21,4 +21,8 @@ class ProductionRepositoryImp @Inject constructor(private val productionDao: Pro
             EntityProductionMapper.map(productionEntity)
         }
     }
+
+    override suspend fun deleteProductionById(id: Int) {
+        productionDao.deleteProductionById(id)
+    }
 }
