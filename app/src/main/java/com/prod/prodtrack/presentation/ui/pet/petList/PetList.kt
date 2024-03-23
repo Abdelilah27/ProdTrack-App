@@ -10,13 +10,13 @@ import com.prod.domain.model.Pet
 
 @Composable
 fun PetList(
-    pets: List<Pet>
-) {
+    pets: List<Pet>,
+    onPetClicked: (Int) -> Unit,) {
     LazyColumn(
         modifier = Modifier.padding(start = 16.dp, end = 16.dp)
     ) {
         items(pets) { pet ->
-            PetListItem(pet)
+            PetListItem(pet, onPetClicked)
         }
     }
 }

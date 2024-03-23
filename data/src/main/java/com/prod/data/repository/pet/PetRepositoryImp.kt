@@ -7,6 +7,7 @@ import com.prod.data.mapper.mapList
 import com.prod.domain.model.Pet
 import com.prod.domain.repository.pet.PetRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class PetRepositoryImp @Inject constructor(private val petDao: PetDao) : PetRepository {
@@ -22,5 +23,15 @@ class PetRepositoryImp @Inject constructor(private val petDao: PetDao) : PetRepo
 
     override suspend fun deletePetById(id: Int) {
         petDao.deletePetById(id)
+    }
+
+    override suspend fun updatePet(id: Int, name: String) {
+        petDao.updatePet(id, name)
+    }
+
+    override fun getPetById(id: Int): Flow<Pet> {
+        return petDao.getPetPetById(id).map { petEntity ->
+            EntityPetMapper.map(petEntity)
+        }
     }
 }

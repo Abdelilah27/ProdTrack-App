@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class PetListUseCaseImp @Inject constructor(private val repository: PetRepository) :
     PetListUseCase {
-    override suspend fun invoke(): Flow<PetListRequestState> {
+    override fun invoke(): Flow<PetListRequestState> {
         return flow {
             try {
                 repository.getAllPets().collect { pets ->

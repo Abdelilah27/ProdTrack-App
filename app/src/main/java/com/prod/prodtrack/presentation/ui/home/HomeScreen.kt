@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.prod.common.view.components.AppTopBar
+import com.prod.domain.model.Pet
 import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.pet.petList.PetScreen
 import com.prod.prodtrack.presentation.ui.production.productionList.ProductionScreen
@@ -32,14 +33,23 @@ import com.prod.prodtrack.presentation.ui.stock.stockList.StockScreen
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
+    onPetClicked: (Int) -> Unit,
     onAddPetButtonClicked: () -> Unit,
     onAddStockButtonClicked: () -> Unit,
     onAddProductionButtonClicked: () -> Unit
 ) {
     val tabItems = listOf(
-        TabItem(stringResource(id = R.string.production), { ProductionScreen() }, onAddProductionButtonClicked),
+        TabItem(
+            stringResource(id = R.string.production),
+            { ProductionScreen() },
+            onAddProductionButtonClicked
+        ),
         TabItem(stringResource(id = R.string.stock), { StockScreen() }, onAddStockButtonClicked),
-        TabItem(stringResource(id = R.string.pet), { PetScreen() }, onAddPetButtonClicked)
+        TabItem(
+            stringResource(id = R.string.pet),
+            { PetScreen(onPetClicked = onPetClicked) },
+            onAddPetButtonClicked
+        )
     )
 
     Scaffold(

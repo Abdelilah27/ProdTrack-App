@@ -1,7 +1,9 @@
 package com.prod.prodtrack.presentation.ui.pet.addPet
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,9 +15,11 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,22 +33,32 @@ import com.prod.common.view.components.ProgressBar
 import com.prod.common.view.components.showToast
 import com.prod.domain.model.Pet
 import com.prod.prodtrack.R
-import com.prod.prodtrack.presentation.ui.production.addProduction.AddProductionUiState
 
 @Composable
 fun AddPetScreen(
     onNavigateUp: () -> Unit,
     addPetViewModel: AddPetViewModel = hiltViewModel(),
+    petId: Int? = null // Pass the selected pet if editing
 ) {
-    val state by addPetViewModel.addPetState.collectAsStateWithLifecycle()
+    val getPetState by addPetViewModel.getPetState.collectAsStateWithLifecycle()
+    val addPetState by addPetViewModel.addPetState.collectAsStateWithLifecycle()
+    val deletePetState by addPetViewModel.deletePetState.collectAsStateWithLifecycle()
+    val updatePetState by addPetViewModel.updatePetState.collectAsStateWithLifecycle()
 
-    var petName by remember { mutableStateOf("") }
+    var petName by rememberSaveable { mutableStateOf("") }
+    var isPetNameModified by remember { mutableStateOf(false) }
+
+    LaunchedEffect(petId) {
+        if (petId != null) addPetViewModel.getPetById(petId)
+    }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             AppTopBar(
-                title = stringResource(id = R.string.add_pet),
+                title = if (petId == null) stringResource(id = R.string.add_pet) else stringResource(
+                    id = R.string.edit_pet
+                ),
                 hasBackBtn = true,
                 onBackBtnClicked = onNavigateUp
             )
@@ -63,29 +77,64 @@ fun AddPetScreen(
             ) {
                 OutlinedTextField(
                     value = petName,
-                    onValueChange = { petName = it },
+                    onValueChange = { petName = it; isPetNameModified = true },
                     label = { Text(stringResource(id = R.string.pet_name_label)) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp)
                 )
                 Spacer(modifier = Modifier.weight(1f))
-                Button(
-                    onClick = {
-                        addPetViewModel.addPet(Pet(name = petName))
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp)
-                        .align(Alignment.CenterHorizontally),
-                    enabled = petName.isNotBlank() && state !is AddPetUiState.Loading
-                ) {
-                    Text(stringResource(id = R.string.save_button))
-                }
 
+                if (petId == null) {
+                    Button(
+                        onClick = {
+                            addPetViewModel.addPet(Pet(name = petName))
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 16.dp)
+                            .align(Alignment.CenterHorizontally),
+                        enabled = petName.isNotBlank() || addPetState !is AddPetUiState.Loading
+                    ) {
+                        Text(stringResource(id = R.string.save_button))
+                    }
+                } else {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 16.dp),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Button(
+                            onClick = {
+                                addPetViewModel.updatePet(id = petId, name = petName)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(end = 8.dp),
+                            enabled = petName.isNotBlank() && updatePetState !is UpdatePetUiState.Loading
+                        ) {
+                            Text(stringResource(id = R.string.update_button))
+                        }
+
+                        Button(
+                            onClick = {
+                                addPetViewModel.deletePet(petId)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(start = 8.dp),
+                            enabled = deletePetState !is DeletePetUiState.Loading
+                        ) {
+                            Text(stringResource(id = R.string.delete_button))
+                        }
+                    }
+
+
+                }
             }
-            // TODO
-            when (state) {
+
+            when (addPetState) {
                 is AddPetUiState.Exception -> {
                     showToast(
                         LocalContext.current,
@@ -107,9 +156,71 @@ fun AddPetScreen(
 
                 else -> {}
             }
+
+            when (deletePetState) {
+                is DeletePetUiState.Exception -> {
+                    showToast(
+                        LocalContext.current,
+                        stringResource(id = R.string.failed_to_delete_pet)
+                    )
+                }
+
+                is DeletePetUiState.Loading -> {
+                    ProgressBar(modifier = Modifier.align(Alignment.Center))
+                }
+
+                is DeletePetUiState.Success -> {
+                    showToast(
+                        LocalContext.current,
+                        stringResource(id = R.string.pet_deleted_successfully)
+                    )
+                    onNavigateUp()
+                }
+
+                else -> {}
+            }
+
+            when (updatePetState) {
+                is UpdatePetUiState.Exception -> {
+                    showToast(
+                        LocalContext.current,
+                        stringResource(id = R.string.failed_to_update_pet)
+                    )
+                }
+
+                is UpdatePetUiState.Loading -> {
+                    ProgressBar(modifier = Modifier.align(Alignment.Center))
+                }
+
+                is UpdatePetUiState.Success -> {
+                    showToast(
+                        LocalContext.current,
+                        stringResource(id = R.string.pet_updated_successfully)
+                    )
+                    onNavigateUp()
+                }
+
+                else -> {}
+            }
+
+            when (val state = getPetState) {
+                is GetPetUiState.Exception -> {
+                    showToast(
+                        LocalContext.current,
+                        stringResource(id = R.string.failed_operation)
+                    )
+                }
+
+                is GetPetUiState.Loading -> {
+                    ProgressBar(modifier = Modifier.align(Alignment.Center))
+                }
+
+                is GetPetUiState.Success -> {
+                    if (!isPetNameModified) petName = state.pet.name
+                }
+
+                else -> {}
+            }
         }
     }
 }
-
-
-

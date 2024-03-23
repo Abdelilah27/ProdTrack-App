@@ -4,5 +4,5 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface PetListUseCase {
-    suspend fun invoke(): Flow<PetListRequestState>
+    fun invoke(): Flow<PetListRequestState>
 }

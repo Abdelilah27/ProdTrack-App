@@ -1,5 +1,6 @@
 package com.prod.prodtrack.presentation.ui.pet.petList
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,12 +15,16 @@ import com.prod.domain.model.Pet
 
 @Composable
 fun PetListItem(
-    pet: Pet
+    pet: Pet,
+    onPetClicked: (Int) -> Unit,
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 8.dp)
+            .clickable {
+                pet.id?.let { onPetClicked.invoke(it) }
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(

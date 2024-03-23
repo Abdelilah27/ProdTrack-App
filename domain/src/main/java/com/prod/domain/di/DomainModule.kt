@@ -4,8 +4,12 @@ import com.prod.domain.usecase.pet.addPet.AddPetUseCase
 import com.prod.domain.usecase.pet.addPet.AddPetUseCaseImp
 import com.prod.domain.usecase.pet.deletePet.DeletePetUseCase
 import com.prod.domain.usecase.pet.deletePet.DeletePetUseCaseImp
+import com.prod.domain.usecase.pet.getPet.GetPetUseCase
+import com.prod.domain.usecase.pet.getPet.GetPetUseCaseImp
 import com.prod.domain.usecase.pet.petList.PetListUseCase
 import com.prod.domain.usecase.pet.petList.PetListUseCaseImp
+import com.prod.domain.usecase.pet.updatePet.UpdatePetUseCase
+import com.prod.domain.usecase.pet.updatePet.UpdatePetUseCaseImp
 import com.prod.domain.usecase.production.addProduction.AddProductionUseCase
 import com.prod.domain.usecase.production.addProduction.AddProductionUseCaseImp
 import com.prod.domain.usecase.production.deleteProduction.DeleteProductionUseCase
@@ -58,6 +62,12 @@ abstract class DomainModule {
 
     @Binds
     abstract fun bindsDeleteStockUseCase(deleteStockUseCaseImp: DeleteStockUseCaseImp): DeleteStockUseCase
+
+    @Binds
+    abstract fun bindsUpdatePetUseCase(updatePetUseCaseImp: UpdatePetUseCaseImp): UpdatePetUseCase
+
+    @Binds
+    abstract fun bindsGetPetUseCase(getPetUseCaseImp: GetPetUseCaseImp): GetPetUseCase
 
 }
 

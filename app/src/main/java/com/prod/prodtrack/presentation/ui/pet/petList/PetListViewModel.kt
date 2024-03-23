@@ -2,8 +2,11 @@ package com.prod.prodtrack.presentation.ui.pet.petList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.prod.domain.usecase.pet.deletePet.DeletePetRequestState
+import com.prod.domain.usecase.pet.deletePet.DeletePetUseCase
 import com.prod.domain.usecase.pet.petList.PetListRequestState
 import com.prod.domain.usecase.pet.petList.PetListUseCase
+import com.prod.prodtrack.presentation.ui.pet.addPet.DeletePetUiState
 import com.prod.prodtrack.presentation.ui.utils.intent.PetListIntent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +21,6 @@ class PetListViewModel @Inject constructor(
 
     private val _petListState = MutableStateFlow<PetListRequestState>(PetListRequestState.Loading)
     val petListState: StateFlow<PetListRequestState> = _petListState
-
-
 
     init {
         processIntent(PetListIntent.PetList)
@@ -44,4 +45,6 @@ class PetListViewModel @Inject constructor(
             }
         }
     }
+
+
 }

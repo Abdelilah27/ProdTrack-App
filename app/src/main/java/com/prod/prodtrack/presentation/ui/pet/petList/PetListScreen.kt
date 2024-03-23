@@ -13,6 +13,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.prod.common.view.components.ProgressBar
 import com.prod.common.view.components.showToast
+import com.prod.domain.model.Pet
 import com.prod.domain.usecase.pet.petList.PetListRequestState
 import com.prod.prodtrack.R
 import com.prod.prodtrack.presentation.ui.utils.intent.PetListIntent
@@ -20,7 +21,7 @@ import com.prod.prodtrack.presentation.ui.utils.intent.PetListIntent
 @Composable
 fun PetScreen(
     petListViewModel: PetListViewModel = hiltViewModel(),
-) {
+    onPetClicked: (Int) -> Unit,) {
     val petListState by petListViewModel.petListState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = petListViewModel) {
@@ -37,7 +38,7 @@ fun PetScreen(
 
             is PetListRequestState.Success -> {
                 PetList(
-                    pets = state.data,
+                    pets = state.data, onPetClicked = onPetClicked
                 )
             }
 

@@ -6,15 +6,21 @@
     <string name="stock">Stock</string>
     <string name="pet">Pet</string>
 
-    <!-- Add Pet Screen -->
+    <!-- Pet Screen -->
     <string name="add_pet">Add Pet</string>
     <string name="pet_name_label">Pet Name</string>
     <string name="pet_added_successfully">Pet added successfully</string>
     <string name="failed_to_add_pet">Failed to add pet</string>
+    <string name="failed_to_delete_pet">Failed to delete pet</string>
+    <string name="edit_pet">Edit Pet</string>
+    <string name="pet_deleted_successfully">Pet deleted successfully</string>
+    <string name="failed_to_update_pet">Failed to update pet</string>
+    <string name="pet_updated_successfully">Pet updated successfully</string>
+
+
 
     <!-- Pet List Screen -->
     <string name="failed_to_load_pets">Failed to load pets</string>
-
 
     <!-- Add Stock Screen -->
     <string name="add_stock">Add Stock</string>
@@ -45,8 +51,14 @@
 
     <!-- Button -->
     <string name="save_button">Save</string>
+    <string name="update_button">Update</string>
+    <string name="delete_button">Delete</string>
     <string name="add">+</string>
 
+
+    <!-- Operations -->
+    <string name="failed_operation">Failed operation</string>
+    <string name="operation_success">Operation success</string>
 
 
 
