@@ -1,12 +1,15 @@
 package com.prod.data.repository.stock
 
 import com.prod.data.dataSource.dao.StockDao
+import com.prod.data.mapper.EntityPetMapper
 import com.prod.data.mapper.EntityStockMapper
 import com.prod.data.mapper.StockMapper
 import com.prod.data.mapper.mapList
+import com.prod.domain.model.Pet
 import com.prod.domain.model.Stock
 import com.prod.domain.repository.stock.StockRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class StockRepositoryImp @Inject constructor(private val stockDao: StockDao) : StockRepository {
@@ -26,5 +29,15 @@ class StockRepositoryImp @Inject constructor(private val stockDao: StockDao) : S
 
     override suspend fun deleteStockById(id: Int) {
         stockDao.deleteStockById(id)
+    }
+
+    override suspend fun updateStock(id: Int, name: String, quantity: Float) {
+        stockDao.updateStock(id, name, quantity)
+    }
+
+    override fun getStockById(id: Int): Flow<Stock> {
+        return stockDao.getPetStockById(id).map { stockEntity ->
+            EntityStockMapper.map(stockEntity)
+        }
     }
 }

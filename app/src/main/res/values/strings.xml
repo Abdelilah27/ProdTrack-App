@@ -6,7 +6,7 @@
     <string name="stock">Stock</string>
     <string name="pet">Pet</string>
 
-    <!-- Pet Screen -->
+    <!-- Pet Screens -->
     <string name="add_pet">Add Pet</string>
     <string name="pet_name_label">Pet Name</string>
     <string name="pet_added_successfully">Pet added successfully</string>
@@ -22,15 +22,18 @@
     <!-- Pet List Screen -->
     <string name="failed_to_load_pets">Failed to load pets</string>
 
-    <!-- Add Stock Screen -->
+    <!-- Stock Screens -->
     <string name="add_stock">Add Stock</string>
     <string name="stock_name_label">Stock Name</string>
     <string name="stock_quantity_label">Stock Quantity</string>
     <string name="stock_added_successfully">Stock added successfully</string>
     <string name="failed_to_add_stock">Failed to add stock</string>
-
-    <!-- Stock List Screen -->
     <string name="failed_to_load_stocks">Failed to load stocks</string>
+    <string name="edit_stock">Edit Stock</string>
+    <string name="stock_deleted_successfully">Stock deleted successfully</string>
+    <string name="failed_to_update_stock">Failed to update stock</string>
+    <string name="stock_updated_successfully">Stock updated successfully</string>
+
 
     <!-- Add Production Screen -->
     <string name="add_production">Add Production</string>

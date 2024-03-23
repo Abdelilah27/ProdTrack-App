@@ -10,13 +10,14 @@ import com.prod.domain.model.Stock
 
 @Composable
 fun StockList(
-    stocks: List<Stock>
+    stocks: List<Stock>,
+    onStockClicked: (Int) -> Unit,
 ) {
     LazyColumn(
         modifier = Modifier.padding(start = 16.dp, end = 16.dp)
     ) {
         items(stocks) { stock ->
-            StockListItem(stock)
+            StockListItem(stock, onStockClicked)
         }
     }
 }

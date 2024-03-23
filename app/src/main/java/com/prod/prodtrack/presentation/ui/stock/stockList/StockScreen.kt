@@ -20,6 +20,7 @@ import com.prod.prodtrack.presentation.ui.utils.intent.StockListIntent
 @Composable
 fun StockScreen(
     stockListViewModel: StockListViewModel = hiltViewModel(),
+    onStockClicked: (Int) -> Unit,
 ) {
     val stockListState by stockListViewModel.stockListState.collectAsStateWithLifecycle()
 
@@ -38,6 +39,7 @@ fun StockScreen(
             is StockListRequestState.Success -> {
                 StockList(
                     stocks = state.data,
+                    onStockClicked = onStockClicked
                 )
             }
 

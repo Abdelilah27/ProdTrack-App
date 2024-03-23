@@ -1,5 +1,6 @@
 package com.prod.prodtrack.presentation.ui.stock.stockList
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,12 +15,16 @@ import com.prod.domain.model.Stock
 
 @Composable
 fun StockListItem(
-    stock: Stock
+    stock: Stock,
+    onStockClicked: (Int) -> Unit,
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 8.dp)
+            .clickable {
+                stock.id?.let { onStockClicked.invoke(it) }
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(

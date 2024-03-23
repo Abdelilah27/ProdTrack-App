@@ -10,11 +10,13 @@ import com.prod.prodtrack.presentation.navigation.addPetScreen
 import com.prod.prodtrack.presentation.navigation.addProductionScreen
 import com.prod.prodtrack.presentation.navigation.addStockScreen
 import com.prod.prodtrack.presentation.navigation.editPetScreen
+import com.prod.prodtrack.presentation.navigation.editStockScreen
 import com.prod.prodtrack.presentation.navigation.homeScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddPetScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddProductionScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddStockScreen
 import com.prod.prodtrack.presentation.navigation.navigateToEditPetScreen
+import com.prod.prodtrack.presentation.navigation.navigateToEditStockScreen
 
 @Composable
 fun MainApp() {
@@ -25,7 +27,7 @@ fun MainApp() {
         startDestination = HOME_ROUTE
     ) {
         homeScreen(onPetClicked = { id -> navController.navigateToEditPetScreen(id) },
-            onStockClicked = { id -> /* handle stock click with id */ },
+            onStockClicked = { id -> navController.navigateToEditStockScreen(id) },
             onProductionClicked = { id -> /* handle production click with id */ },
             onAddPetButtonClicked = { navController.navigateToAddPetScreen() },
             onAddStockButtonClicked = { navController.navigateToAddStockScreen() },
@@ -37,6 +39,9 @@ fun MainApp() {
             navController.navigateUp()
         })
         addStockScreen(onNavigateUp = {
+            navController.navigateUp()
+        })
+        editStockScreen(onNavigateUp = {
             navController.navigateUp()
         })
         addProductionScreen(onNavigateUp = {

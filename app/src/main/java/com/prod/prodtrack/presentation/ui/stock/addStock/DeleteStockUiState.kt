@@ -1,4 +1,4 @@
-package com.prod.prodtrack.presentation.ui.stock.stockList
+package com.prod.prodtrack.presentation.ui.stock.addStock
 
 sealed class DeleteStockUiState {
     data object Loading : DeleteStockUiState()

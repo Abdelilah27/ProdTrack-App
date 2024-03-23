@@ -34,6 +34,7 @@ import com.prod.prodtrack.presentation.ui.stock.stockList.StockScreen
 @Composable
 fun HomeScreen(
     onPetClicked: (Int) -> Unit,
+    onStockClicked: (Int) -> Unit,
     onAddPetButtonClicked: () -> Unit,
     onAddStockButtonClicked: () -> Unit,
     onAddProductionButtonClicked: () -> Unit
@@ -44,7 +45,11 @@ fun HomeScreen(
             { ProductionScreen() },
             onAddProductionButtonClicked
         ),
-        TabItem(stringResource(id = R.string.stock), { StockScreen() }, onAddStockButtonClicked),
+        TabItem(
+            stringResource(id = R.string.stock),
+            { StockScreen(onStockClicked = onStockClicked) },
+            onAddStockButtonClicked
+        ),
         TabItem(
             stringResource(id = R.string.pet),
             { PetScreen(onPetClicked = onPetClicked) },

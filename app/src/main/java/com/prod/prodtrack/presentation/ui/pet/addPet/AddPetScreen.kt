@@ -129,8 +129,6 @@ fun AddPetScreen(
                             Text(stringResource(id = R.string.delete_button))
                         }
                     }
-
-
                 }
             }
 

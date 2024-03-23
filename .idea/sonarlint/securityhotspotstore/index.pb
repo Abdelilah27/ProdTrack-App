@@ -42,14 +42,10 @@ q
 Aapp/src/main/java/com/prod/prodtrack/presentation/di/ProdTrack.kt,f/f/ff33633deee596991c0be61e74dd61be16bb0f0a
 Ç
 Rapp/src/main/java/com/prod/prodtrack/presentation/ui/utils/intent/PetListIntent.kt,6/6/669546345fe8d3800c8cf4f119e0229c5baafb53
-à
-Xapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/addStock/AddStockViewModel.kt,c/2/c27ae37c5f2df24e4f63ecd2a0854e009f3b26a6
 ~
 Ndomain/src/main/java/com/prod/domain/usecase/stock/addStock/AddStockUseCase.kt,0/f/0f47be5b791c5e27b3da37ce054f934a6a3ca721
 c
 3domain/src/main/java/com/prod/domain/model/Stock.kt,4/7/4739be19b9ab129d364e9f2cafd69e2c588ffb0d
-É
-Sapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/stockList/StockScreen.kt,b/0/b099a55bcc3b641d9a06c4e396da01769ec7b8bd
 É
 Sdomain/src/main/java/com/prod/domain/usecase/stock/stockList/StockListUseCaseImp.kt,a/b/abcb52d7adf232f4cdee73ae632782c57e00f388
 Ä
@@ -60,10 +56,6 @@ Vapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/addStock/AddStockUiS
 Udomain/src/main/java/com/prod/domain/usecase/stock/stockList/StockListRequestState.kt,7/e/7e380e18a6a21eaf9cd5aeac86492284fe634f89
 Ç
 Rapp/src/main/java/com/prod/prodtrack/presentation/navigation/AddStockNavigation.kt,3/c/3c3294984695b56b54adce0a6af16458cfe66390
-Å
-Qapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/stockList/StockList.kt,f/5/f5b33f896d7e8048bd9ff450424359d66c8024f9
-Ö
-Uapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/stockList/StockListItem.kt,1/b/1bd7ca8de6dfd860964f5f98c5cf0b14c371d17e
 à
 Xapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/stockList/StockListUiState.kt,0/2/02421bd55193d6cb7dcda6976a9c4b54af7d25c0
 }
@@ -76,8 +68,6 @@ Odomain/src/main/java/com/prod/domain/usecase/pet/petList/PetListRequestState.kt
 Rapp/src/main/java/com/prod/prodtrack/presentation/ui/pet/petList/PetListUiState.kt,0/e/0e3636c135758b4a12e6811ffba312e4dd5fb276
 {
 Kdomain/src/main/java/com/prod/domain/usecase/pet/addPet/AddPetUseCaseImp.kt,d/6/d6370294f45078a7932f1b327c381785436ce8d7
-h
-8data/src/main/java/com/prod/data/entities/StockEntity.kt,8/b/8b6f0ed797f6c0d18a4f7dff632f83ac34e65bd3
 É
 Sdomain/src/main/java/com/prod/domain/usecase/stock/addStock/AddStockRequestState.kt,b/0/b020e8530f4cb80fe7a229367efde4ead2bfb8fb
 Å
@@ -134,8 +124,6 @@ bapp/src/main/java/com/prod/prodtrack/presentation/ui/production/productionList/
 Yapp/src/main/java/com/prod/prodtrack/presentation/ui/utils/intent/ProductionListIntent.kt,c/2/c293629401dfbb210bac171da52a3462cc65a7a9
 ó
 gapp/src/main/java/com/prod/prodtrack/presentation/ui/production/productionList/ProductionListUiState.kt,a/c/acd4b87f2b9eec770510c7905e806fcb1bcecf1f
-Ö
-Uapp/src/main/java/com/prod/prodtrack/presentation/ui/stock/addStock/AddStockScreen.kt,5/4/541fbc25df068063805fb18d33f1f38bcc17003a
 ê
 `app/src/main/java/com/prod/prodtrack/presentation/ui/production/productionList/ProductionList.kt,3/e/3e8b80ba39d890d5583adac0053a0e23cba3f710
 m
@@ -150,12 +138,8 @@ hdomain/src/main/java/com/prod/domain/usecase/production/deleteProduction/Delete
 Rdomain/src/main/java/com/prod/domain/repository/production/ProductionRepository.kt,c/4/c4b8d2b424350069d2600296bbf1d9383ab6efe1
 Å
 Qdomain/src/main/java/com/prod/domain/usecase/pet/deletePet/DeletePetUseCaseImp.kt,0/e/0e48e46d41c3bf66ecfcb4a31972bd3fa7041586
-x
-Hdomain/src/main/java/com/prod/domain/repository/stock/StockRepository.kt,a/1/a159bdef15f9dfc7e566da07e65d91ee3e3cc884
 Å
 Qdata/src/main/java/com/prod/data/repository/production/ProductionRepositoryImp.kt,8/e/8ef2ac078a613d4d3d0c759a33fb2b283bb7a887
-w
-Gdata/src/main/java/com/prod/data/repository/stock/StockRepositoryImp.kt,b/8/b853abc920cdce44e152aa9d9343e0c839572adf
 ~
 Ndomain/src/main/java/com/prod/domain/usecase/pet/deletePet/DeletePetUseCase.kt,9/8/98c2ce3c5f9f1e4304131ef3d83715067aa3c49b
 É
@@ -164,8 +148,6 @@ Sdomain/src/main/java/com/prod/domain/usecase/pet/deletePet/DeletePetRequestStat
 Wdomain/src/main/java/com/prod/domain/usecase/stock/deleteStock/DeleteStockUseCaseImp.kt,e/6/e6de8abd182da39676f9a5a592a830d8a94e5ed1
 Ñ
 Tdomain/src/main/java/com/prod/domain/usecase/stock/deleteStock/DeleteStockUseCase.kt,a/3/a364cd2548ad26f725709d40fddb5ff6643f5d47
-k
-;data/src/main/java/com/prod/data/dataSource/dao/StockDao.kt,d/5/d55580bfd1d58e5b0949c91d59fbb9de963a09db
 â
 Ydomain/src/main/java/com/prod/domain/usecase/stock/deleteStock/DeleteStockRequestState.kt,9/6/96403e17db60c130497df9ee0876be00aaf00958
 ñ

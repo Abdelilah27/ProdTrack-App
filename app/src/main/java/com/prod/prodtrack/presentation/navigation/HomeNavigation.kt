@@ -16,6 +16,7 @@ fun NavGraphBuilder.homeScreen(
     composable(HOME_ROUTE) {
         HomeScreen(
             onPetClicked = onPetClicked,
+            onStockClicked = onStockClicked,
             onAddProductionButtonClicked = onAddProductionButtonClicked,
             onAddStockButtonClicked = onAddStockButtonClicked,
             onAddPetButtonClicked = onAddPetButtonClicked
