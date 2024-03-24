@@ -10,12 +10,14 @@ import com.prod.prodtrack.presentation.navigation.addPetScreen
 import com.prod.prodtrack.presentation.navigation.addProductionScreen
 import com.prod.prodtrack.presentation.navigation.addStockScreen
 import com.prod.prodtrack.presentation.navigation.editPetScreen
+import com.prod.prodtrack.presentation.navigation.editProductionScreen
 import com.prod.prodtrack.presentation.navigation.editStockScreen
 import com.prod.prodtrack.presentation.navigation.homeScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddPetScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddProductionScreen
 import com.prod.prodtrack.presentation.navigation.navigateToAddStockScreen
 import com.prod.prodtrack.presentation.navigation.navigateToEditPetScreen
+import com.prod.prodtrack.presentation.navigation.navigateToEditProductionScreen
 import com.prod.prodtrack.presentation.navigation.navigateToEditStockScreen
 
 @Composable
@@ -28,7 +30,7 @@ fun MainApp() {
     ) {
         homeScreen(onPetClicked = { id -> navController.navigateToEditPetScreen(id) },
             onStockClicked = { id -> navController.navigateToEditStockScreen(id) },
-            onProductionClicked = { id -> /* handle production click with id */ },
+            onProductionClicked = { id -> navController.navigateToEditProductionScreen(id) },
             onAddPetButtonClicked = { navController.navigateToAddPetScreen() },
             onAddStockButtonClicked = { navController.navigateToAddStockScreen() },
             onAddProductionButtonClicked = { navController.navigateToAddProductionScreen() })
@@ -45,6 +47,9 @@ fun MainApp() {
             navController.navigateUp()
         })
         addProductionScreen(onNavigateUp = {
+            navController.navigateUp()
+        })
+        editProductionScreen(onNavigateUp = {
             navController.navigateUp()
         })
     }

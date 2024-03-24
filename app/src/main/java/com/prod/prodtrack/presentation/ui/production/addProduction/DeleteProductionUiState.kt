@@ -1,6 +1,4 @@
-package com.prod.prodtrack.presentation.ui.production.productionList
-
-import com.prod.domain.model.Production
+package com.prod.prodtrack.presentation.ui.production.addProduction
 
 sealed class DeleteProductionUiState {
     data object Loading : DeleteProductionUiState()

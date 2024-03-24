@@ -35,6 +35,7 @@ import com.prod.prodtrack.presentation.ui.stock.stockList.StockScreen
 fun HomeScreen(
     onPetClicked: (Int) -> Unit,
     onStockClicked: (Int) -> Unit,
+    onProductionClicked: (Int) -> Unit,
     onAddPetButtonClicked: () -> Unit,
     onAddStockButtonClicked: () -> Unit,
     onAddProductionButtonClicked: () -> Unit
@@ -42,7 +43,7 @@ fun HomeScreen(
     val tabItems = listOf(
         TabItem(
             stringResource(id = R.string.production),
-            { ProductionScreen() },
+            { ProductionScreen(onProductionClicked = onProductionClicked) },
             onAddProductionButtonClicked
         ),
         TabItem(

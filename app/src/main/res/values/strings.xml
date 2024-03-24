@@ -35,7 +35,7 @@
     <string name="stock_updated_successfully">Stock updated successfully</string>
 
 
-    <!-- Add Production Screen -->
+    <!-- Production Screens -->
     <string name="add_production">Add Production</string>
     <string name="pet_select_label">Pet</string>
     <string name="stock_select_label">Stock</string>
@@ -46,10 +46,14 @@
     <string name="select_stock">Select Stock</string>
     <string name="producing_label">Producing</string>
     <string name="quantity_label">Quantity | MAX </string>
-
-    <!-- Production List Screen -->
     <string name="failed_to_load_productions">Failed to load productions</string>
     <string name="unknown">Unknown</string>
+    <string name="edit_production">Edit Production</string>
+    <string name="failed_to_delete_production">Failed to delete production</string>
+    <string name="production_deleted_successfully">Production deleted successfully</string>
+    <string name="failed_to_update_production">Failed to update Production</string>
+    <string name="production_updated_successfully">Production updated successfully</string>
+
 
 
     <!-- Button -->

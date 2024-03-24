@@ -4,8 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.prod.domain.usecase.pet.petList.PetListRequestState
 import com.prod.domain.usecase.pet.petList.PetListUseCase
-import com.prod.domain.usecase.production.deleteProduction.DeleteProductionRequestState
-import com.prod.domain.usecase.production.deleteProduction.DeleteProductionUseCase
 import com.prod.domain.usecase.production.productionList.ProductionListRequestState
 import com.prod.domain.usecase.production.productionList.ProductionListUseCase
 import com.prod.domain.usecase.stock.stockList.StockListRequestState
@@ -24,7 +22,6 @@ class ProductionListViewModel @Inject constructor(
     private val petListUseCase: PetListUseCase,
     private val stockListUseCase: StockListUseCase,
     private val productionListUseCase: ProductionListUseCase,
-    private val deleteProductionUseCase: DeleteProductionUseCase,
 ) : ViewModel() {
 
     private val _petListState = MutableStateFlow<PetListRequestState>(PetListRequestState.Loading)
@@ -37,10 +34,6 @@ class ProductionListViewModel @Inject constructor(
     private val _productionListState =
         MutableStateFlow<ProductionListRequestState>(ProductionListRequestState.Loading)
     val productionListState: StateFlow<ProductionListRequestState> = _productionListState
-
-    private val _deleteProductionState =
-        MutableStateFlow<DeleteProductionUiState>(DeleteProductionUiState.Loading)
-    val deleteProductionState: StateFlow<DeleteProductionUiState> = _deleteProductionState
 
 
     init {
@@ -105,26 +98,6 @@ class ProductionListViewModel @Inject constructor(
                 }
             } catch (e: Exception) {
                 _productionListState.value = ProductionListRequestState.Exception(exception = e)
-            }
-        }
-    }
-
-    fun deleteProduction(id: Int) {
-        viewModelScope.launch {
-            deleteProductionUseCase.invoke(id).collect { deleteProductionRequestState ->
-                _deleteProductionState.value = when (deleteProductionRequestState) {
-                    is DeleteProductionRequestState.Exception -> DeleteProductionUiState.Exception(
-                        code = deleteProductionRequestState.code,
-                        exception = deleteProductionRequestState.exception
-                    )
-
-                    is DeleteProductionRequestState.Success -> DeleteProductionUiState.Success(
-                        id = deleteProductionRequestState.id
-                    )
-
-                    is DeleteProductionRequestState.Loading -> DeleteProductionUiState.Loading
-
-                }
             }
         }
     }

@@ -14,7 +14,8 @@ import com.prod.prodtrack.R
 fun ProductionList(
     productionItems: List<Production>,
     petsMap: Map<Int, String>,
-    stocksMap: Map<Int, String>
+    stocksMap: Map<Int, String>,
+    onProductionClicked: (Int) -> Unit
 ) {
     LazyColumn(
         modifier = Modifier.padding(start = 16.dp, end = 16.dp)
@@ -23,7 +24,8 @@ fun ProductionList(
             ProductionListItem(
                 production = production,
                 petName = petsMap[production.petId] ?: stringResource(id = R.string.unknown),
-                stockName = stocksMap[production.stockId] ?: stringResource(id = R.string.unknown)
+                stockName = stocksMap[production.stockId] ?: stringResource(id = R.string.unknown),
+                onProductionClicked = onProductionClicked
             )
         }
     }

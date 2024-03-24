@@ -51,7 +51,7 @@ fun AddStockScreen(
 
     var stockName by rememberSaveable { mutableStateOf("") }
     var isStockNameModified by remember { mutableStateOf(false) }
-    var stockQuantity by remember { mutableStateOf("") }
+    var stockQuantity by rememberSaveable { mutableStateOf("") }
     var isStockQuantityModified by remember { mutableStateOf(false) }
 
     LaunchedEffect(stockId) {

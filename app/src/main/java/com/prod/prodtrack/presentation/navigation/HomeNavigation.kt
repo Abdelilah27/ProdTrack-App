@@ -17,6 +17,7 @@ fun NavGraphBuilder.homeScreen(
         HomeScreen(
             onPetClicked = onPetClicked,
             onStockClicked = onStockClicked,
+            onProductionClicked = onProductionClicked,
             onAddProductionButtonClicked = onAddProductionButtonClicked,
             onAddStockButtonClicked = onAddStockButtonClicked,
             onAddPetButtonClicked = onAddPetButtonClicked

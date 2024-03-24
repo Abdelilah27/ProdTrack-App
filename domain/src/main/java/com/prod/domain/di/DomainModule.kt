@@ -14,8 +14,12 @@ import com.prod.domain.usecase.production.addProduction.AddProductionUseCase
 import com.prod.domain.usecase.production.addProduction.AddProductionUseCaseImp
 import com.prod.domain.usecase.production.deleteProduction.DeleteProductionUseCase
 import com.prod.domain.usecase.production.deleteProduction.DeleteProductionUseCaseImp
+import com.prod.domain.usecase.production.getProduction.GetProductionUseCase
+import com.prod.domain.usecase.production.getProduction.GetProductionUseCaseImp
 import com.prod.domain.usecase.production.productionList.ProductionListUseCase
 import com.prod.domain.usecase.production.productionList.ProductionListUseCaseImp
+import com.prod.domain.usecase.production.updateProduction.UpdateProductionUseCase
+import com.prod.domain.usecase.production.updateProduction.UpdateProductionUseCaseImp
 import com.prod.domain.usecase.stock.addStock.AddStockUseCase
 import com.prod.domain.usecase.stock.addStock.AddStockUseCaseImp
 import com.prod.domain.usecase.stock.deleteStock.DeleteStockUseCase
@@ -78,6 +82,12 @@ abstract class DomainModule {
 
     @Binds
     abstract fun bindsGetStockUseCase(getStockUseCaseImp: GetStockUseCaseImp): GetStockUseCase
+
+    @Binds
+    abstract fun bindsUpdateProductionUseCase(updateProductionUseCaseImp: UpdateProductionUseCaseImp): UpdateProductionUseCase
+
+    @Binds
+    abstract fun bindsGetProductionUseCase(getProductionUseCaseImp: GetProductionUseCaseImp): GetProductionUseCase
 
 }
 

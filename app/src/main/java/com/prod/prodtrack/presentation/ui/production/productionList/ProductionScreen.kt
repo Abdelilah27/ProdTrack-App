@@ -24,6 +24,7 @@ import com.prod.prodtrack.presentation.ui.utils.intent.StockListIntent
 @Composable
 fun ProductionScreen(
     productionListViewModel: ProductionListViewModel = hiltViewModel(),
+    onProductionClicked: (Int) -> Unit
 ) {
     val productionListState by productionListViewModel.productionListState.collectAsStateWithLifecycle()
     val petListState by productionListViewModel.petListState.collectAsStateWithLifecycle()
@@ -57,7 +58,8 @@ fun ProductionScreen(
                 ProductionList(
                     productionItems = state.data,
                     petsMap = petMap,
-                    stocksMap = stockMap
+                    stocksMap = stockMap,
+                    onProductionClicked = onProductionClicked
                 )
             }
 

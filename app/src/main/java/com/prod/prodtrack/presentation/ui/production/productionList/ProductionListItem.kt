@@ -1,5 +1,6 @@
 package com.prod.prodtrack.presentation.ui.production.productionList
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,27 +18,24 @@ import com.prod.domain.model.Production
 fun ProductionListItem(
     production: Production,
     petName: String,
-    stockName: String
+    stockName: String,
+    onProductionClicked: (Int) -> Unit
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 8.dp)
+            .clickable {
+                production.id?.let { onProductionClicked.invoke(it) }
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(
-            text = "#${production.id}",
-            modifier = Modifier
-                .weight(1f)
-                .wrapContentWidth(Alignment.Start),
-            fontSize = 14.sp
-        )
-
+        
         Text(
             text = petName,
             modifier = Modifier
                 .weight(1f)
-                .wrapContentWidth(Alignment.CenterHorizontally),
+                .wrapContentWidth(Alignment.Start),
             textAlign = TextAlign.Center
         )
 
@@ -68,7 +66,7 @@ fun ProductionListItem(
         Text(
             text = production.date,
             modifier = Modifier
-                .weight(2f)
+                .weight(3f)
                 .wrapContentWidth(Alignment.End),
             textAlign = TextAlign.End
         )
